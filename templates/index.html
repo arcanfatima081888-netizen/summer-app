@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 For a Special Friend 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 50%, #fff0f0 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Cute Top Bar */
+        .cute-bar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 15px 25px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(212, 123, 138, 0.08);
+            border: 2px solid rgba(212, 123, 138, 0.1);
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .brand .emoji {
+            font-size: 1.8em;
+        }
+        
+        .brand h1 {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #d47b8a;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            padding: 8px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #c49a9c;
+            transition: all 0.3s;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .nav-link:hover {
+            background: #ffe8e8;
+            color: #d47b8a;
+        }
+        
+        .nav-link.active {
+            background: #d47b8a;
+            color: white;
+        }
+        
+        .logout-btn {
+            padding: 8px 18px;
+            border-radius: 25px;
+            background: #ffd4d4;
+            color: #d47b8a;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .logout-btn:hover {
+            background: #ffc8c8;
+        }
+        
+        /* Reset Button in Top Bar */
+        .reset-btn {
+            padding: 8px 18px;
+            border-radius: 25px;
+            background: #ffe0e0;
+            color: #d47b8a;
+            border: 2px solid #ffc8c8;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .reset-btn:hover {
+            background: #ffc8c8;
+            transform: scale(1.05);
+        }
+        
+        /* Welcome Section */
+        .welcome {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 30px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(212, 123, 138, 0.08);
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .welcome .big-emoji {
+            font-size: 3.5em;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .welcome h1 {
+            font-size: 2.5em;
+            color: #d47b8a;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .welcome p {
+            font-size: 1.2em;
+            color: #b8888a;
+            font-weight: 400;
+        }
+        
+        .flash {
+            padding: 15px 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .flash.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .flash.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .flash.info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .page-content {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 35px;
+            border: 2px solid rgba(212, 123, 138, 0.08);
+            min-height: 400px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #d47b8a;
+            margin-bottom: 5px;
+        }
+        
+        .page-subtitle {
+            color: #c49a9c;
+            font-size: 1em;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 15px rgba(212, 123, 138, 0.08);
+            transition: all 0.3s;
+            border: 2px solid rgba(212, 123, 138, 0.05);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 123, 138, 0.15);
+            border-color: rgba(212, 123, 138, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-item .caption {
+            padding: 12px 15px;
+            font-size: 0.8em;
+            color: #b8888a;
+            background: white;
+            font-weight: 600;
+        }
+        
+        /* Video Item */
+        .video-item {
+            margin-bottom: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 15px rgba(212, 123, 138, 0.08);
+            border: 2px solid rgba(212, 123, 138, 0.05);
+        }
+        
+        .video-item video {
+            width: 100%;
+            max-height: 500px;
+            display: block;
+            background: #f5f0f0;
+        }
+        
+        .video-item .video-caption {
+            padding: 12px 20px;
+            background: white;
+            font-size: 0.85em;
+            color: #b8888a;
+            font-weight: 600;
+        }
+        
+        /* Guestbook */
+        .comment-box {
+            background: #fff5f5;
+            padding: 18px 22px;
+            border-radius: 18px;
+            margin: 12px 0;
+            border-left: 4px solid #d47b8a;
+            transition: all 0.3s;
+        }
+        
+        .comment-box:hover {
+            background: #fff0f0;
+        }
+        
+        .comment-box .name {
+            font-weight: 700;
+            color: #d47b8a;
+        }
+        
+        .comment-box .date {
+            color: #d4b8b8;
+            font-size: 0.8em;
+            margin-left: 10px;
+            font-weight: 400;
+        }
+        
+        .comment-box .message {
+            margin-top: 6px;
+            color: #8a7a7a;
+        }
+        
+        .comment-form {
+            background: #fff5f5;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 25px;
+        }
+        
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #f0d4d4;
+            border-radius: 15px;
+            font-size: 1em;
+            font-family: 'Quicksand', sans-serif;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #d47b8a;
+        }
+        
+        .comment-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            font-family: 'Quicksand', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #d47b8a, #c06a7a);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(212, 123, 138, 0.3);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #ff6b6b, #e55a5a);
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Upload Area */
+        .upload-area {
+            border: 3px dashed #f0d4d4;
+            padding: 35px;
+            text-align: center;
+            border-radius: 25px;
+            margin: 25px 0;
+            background: #fffaf5;
+            transition: all 0.3s;
+        }
+        
+        .upload-area:hover {
+            border-color: #d47b8a;
+            background: #fff5f5;
+        }
+        
+        .upload-area h3 {
+            color: #c49a9c;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .upload-area input {
+            margin: 12px 0;
+        }
+        
+        .upload-area input::file-selector-button {
+            padding: 10px 25px;
+            background: #ffe8e8;
+            border: 2px solid #d47b8a;
+            border-radius: 25px;
+            color: #d47b8a;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-area input::file-selector-button:hover {
+            background: #d47b8a;
+            color: white;
+        }
+        
+        /* Reset Section */
+        .reset-section {
+            background: #fff5f5;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 25px 0;
+            border: 2px solid #ffd4d4;
+        }
+        
+        .reset-section h3 {
+            color: #d47b8a;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .reset-section p {
+            color: #b8888a;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .reset-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        /* Surprise Box */
+        .surprise-box {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, #fff5f5, #fff0f5);
+            border-radius: 30px;
+            margin: 20px 0;
+            border: 2px solid rgba(212, 123, 138, 0.1);
+        }
+        
+        .surprise-box .emoji {
+            font-size: 5em;
+            display: block;
+            animation: wiggle 3s infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        
+        .surprise-box .title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #d47b8a;
+            margin: 15px 0 10px;
+        }
+        
+        .surprise-box .message {
+            color: #b8888a;
+            font-size: 1.1em;
+        }
+        
+        .empty-message {
+            text-align: center;
+            color: #d4b8b8;
+            padding: 40px 0;
+            font-size: 1.1em;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        /* Status Messages */
+        .status-message {
+            padding: 12px 18px;
+            border-radius: 15px;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+        
+        .status-message.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-message.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .status-message.loading {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0 15px;
+            color: #d4b8b8;
+            font-size: 0.9em;
+        }
+        
+        .footer .heart {
+            color: #d47b8a;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* Modal for reset confirmation */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content h2 {
+            color: #d47b8a;
+            margin-bottom: 10px;
+        }
+        
+        .modal-content p {
+            color: #b8888a;
+            margin-bottom: 20px;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cute-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+            }
+            
+            .welcome h1 {
+                font-size: 1.8em;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-content {
+                padding: 20px;
+            }
+            
+            .reset-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cute Top Bar -->
+        <nav class="cute-bar">
+            <div class="brand">
+                <span class="emoji">🌸</span>
+                <h1>For a Special Friend</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-page="gallery">📸 Photos</a>
+                <a href="#" class="nav-link" data-page="videos">🎥 Videos</a>
+                <a href="#" class="nav-link" data-page="guestbook">💬 Messages</a>
+                <a href="#" class="nav-link" data-page="surprise">🎁 Surprise</a>
+                <a href="#" class="nav-link" data-page="settings">⚙️ Settings</a>
+                <a href="{{ url_for('logout') }}" class="logout-btn">💕 Bye!</a>
+            </div>
+        </nav>
+        
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <!-- Welcome -->
+        <div class="welcome">
+            <span class="big-emoji">💖</span>
+            <h1>{{ greeting }}</h1>
+            <p>🌸 This is your special corner of the internet</p>
+        </div>
+        
+        <!-- Page: Gallery -->
+        <div id="page-gallery" class="page active">
+            <div class="page-content">
+                <h2 class="page-title">📸 Our Memories</h2>
+                <p class="page-subtitle">💕 Every photo tells a story</p>
+                
+                {% if photos %}
+                    <div class="gallery-grid">
+                        {% for photo in photos %}
+                            <div class="gallery-item">
+                                <img src="{{ photo.url }}" alt="{{ photo.filename }}" loading="lazy">
+                                <div class="caption">💖 {{ photo.filename }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="empty-message">
+                        🌸 No photos yet<br>
+                        <span style="font-size: 0.8em;">Upload your first memory below!</span>
+                    </div>
+                {% endif %}
+                
+                <div class="upload-area">
+                    <h3>📤 Add a Photo</h3>
+                    <form id="photoUploadForm" enctype="multipart/form-data">
+                        <input type="file" name="file" accept="image/*" required>
+                        <input type="hidden" name="type" value="photo">
+                        <button type="submit" class="btn btn-primary">💖 Upload</button>
+                    </form>
+                    <div id="photoUploadStatus"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page: Videos -->
+        <div id="page-videos" class="page">
+            <div class="page-content">
+                <h2 class="page-title">🎥 Sweet Videos</h2>
+                <p class="page-subtitle">💕 Moments in motion</p>
+                
+                {% if videos %}
+                    {% for video in videos %}
+                        <div class="video-item">
+                            <video controls autoplay muted loop playsinline>
+                                <source src="{{ video.url }}" type="video/mp4">
+                                Your browser doesn't support videos 😅
+                            </video>
+                            <div class="video-caption">💖 {{ video.filename }}</div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty-message">
+                        🎬 No videos yet<br>
+                        <span style="font-size: 0.8em;">Upload your first video below!</span>
+                    </div>
+                {% endif %}
+                
+                <div class="upload-area">
+                    <h3>📤 Add a Video</h3>
+                    <form id="videoUploadForm" enctype="multipart/form-data">
+                        <input type="file" name="file" accept="video/*" required>
+                        <input type="hidden" name="type" value="video">
+                        <button type="submit" class="btn btn-primary">💖 Upload</button>
+                    </form>
+                    <div id="videoUploadStatus"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page: Guestbook -->
+        <div id="page-guestbook" class="page">
+            <div class="page-content">
+                <h2 class="page-title">💬 Sweet Messages</h2>
+                <p class="page-subtitle">💕 Words from the heart</p>
+                
+                {% if comments %}
+                    <div style="max-height: 500px; overflow-y: auto; padding-right: 10px;">
+                        {% for comment in comments|reverse %}
+                            <div class="comment-box">
+                                <span class="name">💕 {{ comment.name }}</span>
+                                <span class="date">• {{ comment.timestamp }}</span>
+                                <p class="message">{{ comment.message }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="empty-message">
+                        💬 No messages yet<br>
+                        <span style="font-size: 0.8em;">Leave a sweet message below!</span>
+                    </div>
+                {% endif %}
+                
+                <div class="comment-form">
+                    <h3 style="color: #d47b8a; font-weight: 700; margin-bottom: 15px;">
+                        ✍️ Write Something Sweet
+                    </h3>
+                    <form id="commentForm">
+                        <input type="text" name="name" placeholder="Your name..." required maxlength="50">
+                        <textarea name="message" placeholder="Write something beautiful..." required maxlength="500"></textarea>
+                        <button type="submit" class="btn btn-primary">💕 Send Love</button>
+                    </form>
+                    <div id="commentStatus"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page: Surprise -->
+        <div id="page-surprise" class="page">
+            <div class="page-content">
+                <h2 class="page-title">🎁 A Little Surprise</h2>
+                <p class="page-subtitle">💕 For my special friend</p>
+                
+                <div style="text-align: center; margin: 25px 0;">
+                    <button onclick="getSurprise()" class="btn btn-primary" style="font-size: 1.2em; padding: 15px 40px;">
+                        💖 Click for a Surprise!
+                    </button>
+                </div>
+                
+                <div id="surpriseResult"></div>
+                
+                <div style="margin-top: 40px; padding: 25px; background: #fff5f5; border-radius: 20px;">
+                    <h3 style="color: #d47b8a; font-weight: 700; margin-bottom: 10px;">
+                        🎵 Background Music
+                    </h3>
+                    <p style="color: #c49a9c; margin-bottom: 12px;">
+                        Add some sweet tunes to your visit
+                    </p>
+                    <input type="text" id="musicUrl" placeholder="https://www.youtube.com/watch?v=..." style="width: 100%; padding: 12px 16px; border: 2px solid #f0d4d4; border-radius: 15px; font-size: 1em; margin-bottom: 12px;">
+                    <button onclick="playMusic()" class="btn btn-primary">▶️ Play Music</button>
+                    <div id="musicPlayer" style="margin-top: 15px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page: Settings -->
+        <div id="page-settings" class="page">
+            <div class="page-content">
+                <h2 class="page-title">⚙️ Gallery Settings</h2>
+                <p class="page-subtitle">💕 Manage your memory collection</p>
+                
+                <div class="reset-section">
+                    <h3>🧹 Reset Gallery</h3>
+                    <p>This will permanently delete all photos, videos, and messages. This action cannot be undone!</p>
+                    
+                    <div class="reset-buttons">
+                        <button onclick="showResetModal('all')" class="btn btn-danger">
+                            🔄 Reset Everything
+                        </button>
+                        <button onclick="showResetModal('photos')" class="btn btn-danger" style="background: #ff8a8a;">
+                            📸 Reset Photos Only
+                        </button>
+                        <button onclick="showResetModal('videos')" class="btn btn-danger" style="background: #ff9a9a;">
+                            🎥 Reset Videos Only
+                        </button>
+                        <button onclick="showResetModal('comments')" class="btn btn-danger" style="background: #ffaaaa;">
+                            💬 Reset Messages Only
+                        </button>
+                    </div>
+                </div>
+                
+                <div style="background: #fff5f5; padding: 20px; border-radius: 20px; margin-top: 20px;">
+                    <h3 style="color: #d47b8a; font-weight: 700; margin-bottom: 10px;">
+                        📊 Gallery Stats
+                    </h3>
+                    <p style="color: #b8888a;">
+                        📸 Photos: {{ photos|length }}<br>
+                        🎥 Videos: {{ videos|length }}<br>
+                        💬 Messages: {{ comments|length }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>🌸 Made with <span class="heart">💖</span> for a special friend</p>
+            <p style="font-size: 0.8em; margin-top: 5px;">Every memory is precious 💕</p>
+        </div>
+    </div>
+    
+    <!-- Reset Confirmation Modal -->
+    <div class="modal" id="resetModal">
+        <div class="modal-content">
+            <h2>💕 Are you sure?</h2>
+            <p id="resetModalMessage">This will permanently delete everything. This action cannot be undone!</p>
+            <div class="modal-buttons">
+                <button onclick="confirmReset()" class="btn btn-danger" id="confirmResetBtn">
+                    ✅ Yes, Reset
+                </button>
+                <button onclick="closeResetModal()" class="btn btn-primary" style="background: #c49a9c;">
+                    ❌ Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ============================================
+        // NAVIGATION
+        // ============================================
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                const pageName = this.dataset.page;
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                document.getElementById(`page-${pageName}`).classList.add('active');
+            });
+        });
+        
+        // ============================================
+        // RESET MODAL
+        // ============================================
+        let resetType = 'all';
+        
+        function showResetModal(type) {
+            resetType = type;
+            const modal = document.getElementById('resetModal');
+            const message = document.getElementById('resetModalMessage');
+            
+            const messages = {
+                'all': 'This will permanently delete ALL photos, videos, and messages. This action cannot be undone!',
+                'photos': 'This will permanently delete ALL photos. This action cannot be undone!',
+                'videos': 'This will permanently delete ALL videos. This action cannot be undone!',
+                'comments': 'This will permanently delete ALL messages. This action cannot be undone!'
+            };
+            
+            message.textContent = messages[type] || messages['all'];
+            modal.classList.add('active');
+        }
+        
+        function closeResetModal() {
+            document.getElementById('resetModal').classList.remove('active');
+        }
+        
+        async function confirmReset() {
+            const btn = document.getElementById('confirmResetBtn');
+            btn.textContent = '⏳ Resetting...';
+            btn.disabled = true;
+            
+            let endpoint = '/reset';
+            if (resetType === 'photos') endpoint = '/reset/photos';
+            else if (resetType === 'videos') endpoint = '/reset/videos';
+            else if (resetType === 'comments') endpoint = '/reset/comments';
+            
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('✅ ' + result.message);
+                    location.reload();
+                } else {
+                    alert('❌ ' + (result.error || 'Reset failed'));
+                }
+            } catch (error) {
+                alert('❌ Failed to reset: ' + error.message);
+            }
+            
+            btn.textContent = '✅ Yes, Reset';
+            btn.disabled = false;
+            closeResetModal();
+        }
+        
+        // Close modal on outside click
+        document.getElementById('resetModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeResetModal();
+            }
+        });
+        
+        // ============================================
+        // PHOTO UPLOAD
+        // ============================================
+        document.getElementById('photoUploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const status = document.getElementById('photoUploadStatus');
+            status.innerHTML = '<div class="status-message loading">⏳ Uploading your memory...</div>';
+            
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    status.innerHTML = '<div class="status-message success">💖 ' + result.message + '</div>';
+                    setTimeout(() => location.reload(), 1500);
+                } else {
+                    status.innerHTML = '<div class="status-message error">😅 ' + result.error + '</div>';
+                }
+            } catch (error) {
+                status.innerHTML = '<div class="status-message error">😅 Upload failed</div>';
+            }
+        });
+        
+        // ============================================
+        // VIDEO UPLOAD
+        // ============================================
+        document.getElementById('videoUploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const status = document.getElementById('videoUploadStatus');
+            status.innerHTML = '<div class="status-message loading">⏳ Uploading your video...</div>';
+            
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    status.innerHTML = '<div class="status-message success">💖 ' + result.message + '</div>';
+                    setTimeout(() => location.reload(), 1500);
+                } else {
+                    status.innerHTML = '<div class="status-message error">😅 ' + result.error + '</div>';
+                }
+            } catch (error) {
+                status.innerHTML = '<div class="status-message error">😅 Upload failed</div>';
+            }
+        });
+        
+        // ============================================
+        // COMMENT SUBMISSION
+        // ============================================
+        document.getElementById('commentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const status = document.getElementById('commentStatus');
+            status.innerHTML = '<div class="status-message loading">⏳ Sending your message...</div>';
+            
+            try {
+                const response = await fetch('/add_comment', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    status.innerHTML = '<div class="status-message success">💖 ' + result.message + '</div>';
+                    this.reset();
+                    setTimeout(() => location.reload(), 1500);
+                } else {
+                    status.innerHTML = '<div class="status-message error">😅 ' + result.error + '</div>';
+                }
+            } catch (error) {
+                status.innerHTML = '<div class="status-message error">😅 Failed to send</div>';
+            }
+        });
+        
+        // ============================================
+        // SURPRISE
+        // ============================================
+        async function getSurprise() {
+            const resultDiv = document.getElementById('surpriseResult');
+            resultDiv.innerHTML = '<div class="status-message loading" style="text-align: center;">🌸 Getting your surprise...</div>';
+            
+            try {
+                const response = await fetch('/surprise');
+                const data = await response.json();
+                
+                resultDiv.innerHTML = `
+                    <div class="surprise-box">
+                        <span class="emoji">${data.emoji}</span>
+                        <div class="title">${data.title}</div>
+                        <div class="message">${data.message}</div>
+                        <p style="margin-top: 15px; color: #d4b8b8; font-size: 0.9em;">
+                            💕 This is just for you!
+                        </p>
+                    </div>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = '<div class="status-message error" style="text-align: center;">😅 Oops! Something went wrong</div>';
+            }
+        }
+        
+        // ============================================
+        // MUSIC PLAYER
+        // ============================================
+        function playMusic() {
+            const url = document.getElementById('musicUrl').value;
+            const player = document.getElementById('musicPlayer');
+            
+            if (url) {
+                let videoId = url;
+                const patterns = [
+                    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/,
+                    /youtube\.com\/embed\/([^?]+)/
+                ];
+                
+                for (const pattern of patterns) {
+                    const match = url.match(pattern);
+                    if (match) {
+                        videoId = match[1];
+                        break;
+                    }
+                }
+                
+                if (videoId && videoId.length === 11) {
+                    player.innerHTML = `
+                        <iframe 
+                            width="100%" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                            frameborder="0" 
+                            allow="autoplay; encrypted-media" 
+                            allowfullscreen
+                            style="border-radius: 15px;">
+                        </iframe>
+                    `;
+                } else {
+                    player.innerHTML = '<div class="status-message error">😅 Please enter a valid YouTube URL</div>';
+                }
+            } else {
+                player.innerHTML = '<div class="status-message" style="color: #d4b8b8;">🌸 Enter a YouTube URL for music</div>';
+            }
+        }
+    </script>
+</body>
+</html>
