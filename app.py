@@ -6,7 +6,6 @@ import datetime
 import glob
 import random
 import logging
-import shutil
 
 # ============================================
 # LOGGING SETUP
@@ -43,7 +42,7 @@ if not os.path.exists(app.config['GUESTBOOK_FILE']):
 CORS(app)
 
 # ============================================
-# CUTE GREETINGS (Shows on main page)
+# CUTE GREETINGS
 # ============================================
 CUTE_GREETINGS = [
     "🌸 You're so special!",
@@ -59,11 +58,9 @@ CUTE_GREETINGS = [
 ]
 
 # ============================================
-# ✨ SURPRISE MESSAGES - EDIT THIS SECTION! ✨
-# Add as many as you want!
+# SURPRISE MESSAGES - EDIT THESE!
 # ============================================
 CUTE_MESSAGES = [
-    # ----- DEFAULT MESSAGES -----
     {"emoji": "💕", "title": "You're the best!", "message": "Thank you for being such a special friend!"},
     {"emoji": "🌸", "title": "You're beautiful!", "message": "Inside and out, you're absolutely lovely!"},
     {"emoji": "🌈", "title": "You're my rainbow!", "message": "You make everything colorful and bright!"},
@@ -75,36 +72,13 @@ CUTE_MESSAGES = [
     {"emoji": "✨", "title": "You're magical!", "message": "There's no one else quite like you!"},
     {"emoji": "🌷", "title": "You're precious!", "message": "Our friendship means the world to me!"},
     
-    # ----- ✨ ADD YOUR PERSONAL MESSAGES BELOW ✨ -----
-    # Just copy this format: {"emoji": "😊", "title": "Your Title", "message": "Your message here!"},
-    
-    # Personal Messages - Edit these!
+    # ----- ✨ ADD YOUR PERSONAL MESSAGES HERE ✨ -----
     {"emoji": "🌟", "title": "My Favorite Person!", "message": "You make every day better just by being you!"},
     {"emoji": "🎀", "title": "So Grateful for You!", "message": "I'm so lucky to have you in my life!"},
-    {"emoji": "💫", "title": "You're One of a Kind!", "message": "There's nobody else like you, and that's what makes you so special!"},
+    {"emoji": "💫", "title": "You're One of a Kind!", "message": "There's nobody else like you!"},
     {"emoji": "🌹", "title": "A True Friend!", "message": "Thank you for always being there for me!"},
-    {"emoji": "🎈", "title": "You Make Me Smile!", "message": "Every time I think of you, I can't help but smile!"},
+    {"emoji": "🎈", "title": "You Make Me Smile!", "message": "Every time I think of you, I smile!"},
     {"emoji": "💎", "title": "You're a Gem!", "message": "Rare, precious, and absolutely beautiful!"},
-    {"emoji": "🏆", "title": "You're a Winner!", "message": "You win at being the best friend anyone could ask for!"},
-    {"emoji": "🎊", "title": "Celebrating You!", "message": "Today and every day, I celebrate having you in my life!"},
-    {"emoji": "💝", "title": "You're Loved!", "message": "Just in case you forgot - you are so loved!"},
-    {"emoji": "🌅", "title": "You're My Sunrise!", "message": "You bring light and hope to every day!"},
-    {"emoji": "🎵", "title": "You're My Favorite Song!", "message": "The melody of your friendship makes my heart sing!"},
-    {"emoji": "📖", "title": "You're My Favorite Chapter!", "message": "Our friendship is the best part of my story!"},
-    {"emoji": "☀️", "title": "You're My Sunshine!", "message": "You brighten even the darkest days!"},
-    {"emoji": "🌙", "title": "You're My Moon!", "message": "You shine so bright, even in the darkness!"},
-    {"emoji": "🌸", "title": "You're Blooming!", "message": "Watching you grow and bloom is such a joy!"},
-    {"emoji": "🦋", "title": "You're Transforming!", "message": "You're becoming even more beautiful every day!"},
-    {"emoji": "💪", "title": "You're So Strong!", "message": "You're stronger than you know, braver than you believe!"},
-    {"emoji": "🧡", "title": "You're My Safe Space!", "message": "I feel so safe and comfortable with you!"},
-    {"emoji": "🤗", "title": "Sending You a Hug!", "message": "Wrapping you in a big, warm hug right now!"},
-    {"emoji": "😊", "title": "You Make Me Happy!", "message": "Just knowing you exists makes me happy!"},
-    {"emoji": "🎯", "title": "You Hit the Target!", "message": "You're exactly the friend I needed in my life!"},
-    {"emoji": "🧁", "title": "You're So Sweet!", "message": "Sweeter than any cupcake - and that's saying something!"},
-    {"emoji": "🍀", "title": "You're My Lucky Charm!", "message": "I feel so lucky to have you in my life!"},
-    {"emoji": "🎨", "title": "You're a Masterpiece!", "message": "Beautifully and wonderfully made - that's you!"},
-    {"emoji": "📸", "title": "You're Picture Perfect!", "message": "Every moment with you is frame-worthy!"},
-    {"emoji": "🎤", "title": "You're My Favorite Voice!", "message": "Your words always bring me comfort and joy!"},
 ]
 
 # ============================================

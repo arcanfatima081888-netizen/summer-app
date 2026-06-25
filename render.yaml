@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: special-friend-gallery
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PASSWORD
+        value: YourSecretPassword123
+      - key: SECRET_KEY
+        value: your-secret-key-here-change-this

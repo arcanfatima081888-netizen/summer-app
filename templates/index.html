@@ -26,7 +26,6 @@
             padding: 20px;
         }
         
-        /* Cute Top Bar */
         .cute-bar {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
@@ -100,7 +99,6 @@
             background: #ffc8c8;
         }
         
-        /* Reset Button in Top Bar */
         .reset-btn {
             padding: 8px 18px;
             border-radius: 25px;
@@ -119,7 +117,6 @@
             transform: scale(1.05);
         }
         
-        /* Welcome Section */
         .welcome {
             text-align: center;
             padding: 40px 20px;
@@ -206,7 +203,6 @@
             font-weight: 400;
         }
         
-        /* Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -243,7 +239,6 @@
             font-weight: 600;
         }
         
-        /* Video Item */
         .video-item {
             margin-bottom: 30px;
             border-radius: 20px;
@@ -268,7 +263,6 @@
             font-weight: 600;
         }
         
-        /* Guestbook */
         .comment-box {
             background: #fff5f5;
             padding: 18px 22px;
@@ -361,7 +355,6 @@
             box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
         }
         
-        /* Upload Area */
         .upload-area {
             border: 3px dashed #f0d4d4;
             padding: 35px;
@@ -403,7 +396,6 @@
             color: white;
         }
         
-        /* Reset Section */
         .reset-section {
             background: #fff5f5;
             padding: 25px;
@@ -430,7 +422,6 @@
             flex-wrap: wrap;
         }
         
-        /* Surprise Box */
         .surprise-box {
             text-align: center;
             padding: 50px 30px;
@@ -480,7 +471,6 @@
             animation: fadeIn 0.5s ease;
         }
         
-        /* Status Messages */
         .status-message {
             padding: 12px 18px;
             border-radius: 15px;
@@ -521,7 +511,6 @@
             50% { transform: scale(1.2); }
         }
         
-        /* Modal for reset confirmation */
         .modal {
             display: none;
             position: fixed;
@@ -567,7 +556,6 @@
             flex-wrap: wrap;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .cute-bar {
                 flex-direction: column;
@@ -598,7 +586,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Cute Top Bar -->
         <nav class="cute-bar">
             <div class="brand">
                 <span class="emoji">🌸</span>
@@ -614,7 +601,6 @@
             </div>
         </nav>
         
-        <!-- Flash Messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
@@ -623,14 +609,12 @@
             {% endif %}
         {% endwith %}
         
-        <!-- Welcome -->
         <div class="welcome">
             <span class="big-emoji">💖</span>
             <h1>{{ greeting }}</h1>
             <p>🌸 This is your special corner of the internet</p>
         </div>
         
-        <!-- Page: Gallery -->
         <div id="page-gallery" class="page active">
             <div class="page-content">
                 <h2 class="page-title">📸 Our Memories</h2>
@@ -664,7 +648,6 @@
             </div>
         </div>
         
-        <!-- Page: Videos -->
         <div id="page-videos" class="page">
             <div class="page-content">
                 <h2 class="page-title">🎥 Sweet Videos</h2>
@@ -699,7 +682,6 @@
             </div>
         </div>
         
-        <!-- Page: Guestbook -->
         <div id="page-guestbook" class="page">
             <div class="page-content">
                 <h2 class="page-title">💬 Sweet Messages</h2>
@@ -736,7 +718,6 @@
             </div>
         </div>
         
-        <!-- Page: Surprise -->
         <div id="page-surprise" class="page">
             <div class="page-content">
                 <h2 class="page-title">🎁 A Little Surprise</h2>
@@ -764,7 +745,6 @@
             </div>
         </div>
         
-        <!-- Page: Settings -->
         <div id="page-settings" class="page">
             <div class="page-content">
                 <h2 class="page-title">⚙️ Gallery Settings</h2>
@@ -803,14 +783,12 @@
             </div>
         </div>
         
-        <!-- Footer -->
         <div class="footer">
             <p>🌸 Made with <span class="heart">💖</span> for a special friend</p>
             <p style="font-size: 0.8em; margin-top: 5px;">Every memory is precious 💕</p>
         </div>
     </div>
     
-    <!-- Reset Confirmation Modal -->
     <div class="modal" id="resetModal">
         <div class="modal-content">
             <h2>💕 Are you sure?</h2>
@@ -827,9 +805,7 @@
     </div>
     
     <script>
-        // ============================================
-        // NAVIGATION
-        // ============================================
+        // Navigation
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -843,9 +819,7 @@
             });
         });
         
-        // ============================================
-        // RESET MODAL
-        // ============================================
+        // Reset Modal
         let resetType = 'all';
         
         function showResetModal(type) {
@@ -902,16 +876,13 @@
             closeResetModal();
         }
         
-        // Close modal on outside click
         document.getElementById('resetModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeResetModal();
             }
         });
         
-        // ============================================
-        // PHOTO UPLOAD
-        // ============================================
+        // Photo Upload
         document.getElementById('photoUploadForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const formData = new FormData(this);
@@ -936,9 +907,7 @@
             }
         });
         
-        // ============================================
-        // VIDEO UPLOAD
-        // ============================================
+        // Video Upload
         document.getElementById('videoUploadForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const formData = new FormData(this);
@@ -963,9 +932,7 @@
             }
         });
         
-        // ============================================
-        // COMMENT SUBMISSION
-        // ============================================
+        // Comment Submission
         document.getElementById('commentForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const formData = new FormData(this);
@@ -991,9 +958,7 @@
             }
         });
         
-        // ============================================
-        // SURPRISE
-        // ============================================
+        // Surprise
         async function getSurprise() {
             const resultDiv = document.getElementById('surpriseResult');
             resultDiv.innerHTML = '<div class="status-message loading" style="text-align: center;">🌸 Getting your surprise...</div>';
@@ -1017,9 +982,7 @@
             }
         }
         
-        // ============================================
-        // MUSIC PLAYER
-        // ============================================
+        // Music Player
         function playMusic() {
             const url = document.getElementById('musicUrl').value;
             const player = document.getElementById('musicPlayer');
